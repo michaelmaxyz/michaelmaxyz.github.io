@@ -3,57 +3,43 @@ html {
         font-family: 'Roboto', sans-serif;
     font-size:120%;
 }
+
 ul {
     width: 5%;
     margin: auto;
 }
+
 .about {
     margin-left:30%;
     margin-right:30%;
 
 }
+
 .link {
     padding:10px;
     text-decoration:none;
 }
+
 a:visited {
       color: blue;
 }
+
 .content {
     display:flex;
 }
+
 .text{
     font-size:130%;
 }
+
 .content img {
     margin-right:10px;
     display:block;
 }
-.money {
-    height: 30%;
-    width: 30%;
-}
+
 #av{
     height: auto; 
     width: 25%;
 }
 
-.marquee {
-  position: relative;
-  width: 100vw;
-  max-width: 100%;
-  height: 200px;
-  overflow-x: hidden;
-}
 
-.track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 32s linear infinite;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(50%); }
-}
