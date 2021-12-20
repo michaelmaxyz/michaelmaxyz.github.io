@@ -19,10 +19,23 @@ ul {
 a:visited {
       color: blue;
 }
-
+.content {
+    display:flex;
+}
+.text{
+    font-size:130%;
+}
+.content img {
+    margin-right:10px;
+    display:block;
+}
 .money {
     height: 30%;
     width: 30%;
+}
+#av{
+    height: auto; 
+    width: 25%;
 }
 
 .marquee {
