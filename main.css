@@ -30,6 +30,9 @@ a:visited {
 
 .text{
     font-size:130%;
+    padding-right: 10%;
+    padding-left: 10%;
+
 }
 
 .content img {
