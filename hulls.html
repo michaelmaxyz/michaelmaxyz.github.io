@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <link rel="stylesheet" href="main.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-   </head>
-   <body>
-      <div class="about">
-         <a class="mainlogo" href="index.html" style="color:black; text-decoration:none">
-            <h1>Michael Ma AKA 馬超然</h1>
-         </a>
-         <a class="link"href="projects.html">projects</a>
-         <a class="link"href="writing.html">writing</a>
-         <a class="link"href="Resume2021.pdf">resume</a>
-            <div class="text">
-               
-            </div>
-     
-      </div>
-      <hr>
-      
-      <p>email: chiuyin2@illinois.edu</p>
-   </body>
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <div class="about">
+<a class="mainlogo" href="index.html" style="color:black; text-decoration:none"><h1>Michael Ma AKA 馬超然</h1></a>   <a class="link"href="projects.html">projects</a>
+    <a class="link"href="writing.html">writing</a>
+    <a class="link"href="Resume2021.pdf">resume</a>
+    </div>         
+    <div class="content">
+    <div class="text">
+    <h2>Convex Hulls in 2D and 3D</h2>
+        <p>
+        Generated unique and constantly changing <a href ="https://en.wikipedia.org/wiki/Convex_hull" >convex hulls</a> via a randomized, chaotic <a href ="https://en.wikipedia.org/wiki/N-body_problem">n-body problem.</a> For both dimensions, a O(n^2) brute algorithm for calculating gravitational forces. Possible optimization could be done by reducing it to O(nlogn) via the <a href ="https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation">barnes-hut algorithm</a> but it really is not worth the space/time spent when the number of bodies is less than 1000 or so. 
+        <br>
+        </p>
+        <figure>
+        <img id = "small" height ="40%" width = "40%"  src="images/n.gif">
+        <figcaption> Simple n body simulation </figcaption>
+        </figure>
+        <p>For the 2 dimensional n body simulation, finding the convex hull was pretty simple, using the Jarvis March algorithm. Starting from the left most point, we scan every other point until we find the right most point relative to the current point. We then move onto that point and repeat until we get back to the start point. Jarvis March runs in O(nh) time where n is the number of points and h is the number of edges in the hull. There exists a possible O(nlogn) optimization using Graham scan as well as a O(nlogh) optimization using <a href="http://tmc.web.engr.illinois.edu"> Chan's </a> algorithm </p>    
+        <figure>
+        <img id = "small" height ="40%" width = "40%"  src="images/2D.gif">
+        <figcaption> Convex Hull in 2 dimensions </figcaption>
+        </figure>
+        <p>Things get a little bit more complicated in three dimensions. For the most simple implementation, simply move through every triplet pair of points (a face) and decide if every other point is on one side of the face. If so, it belongs to the convex set. This is done by finding the orthogonal vector and using cross and dot products to see if the above condition is true. This naive algorithm runs in O(n^4) time. Although it can be optimized, it is very simple and is acceptable when N is a (relatively) low number. Possible optimizations include using Jarvis March in three dimensions which would be O(nF) where F is the number of faces, a divide and conquer (difficult) algorithm that would run in O(nlogn) time as well as an incremental algorithm that would take O(n^2). </p>
+        <figure>
+        <img id = "small" height ="40%" width = "40%"  src="images/3D.gif">
+        <img id = "small" height ="40%" width = "40%"  src="images/3dwp.gif">
+
+        <figcaption>On the left, convex hull in three dimensions. On the right, convex hull with the bodies shown. </figcaption>
+        </figure>
+        </div></div>
+        <br>
+        <h2>Code avaliable on <a href = "http://github.com/michaelmaxyz/convexhulls">GITHUB</a></h2>
+    <hr>
+
+<p>email: chiuyin2@illinois.edu</p>
+<script src="index.js"></script>
+</body>
 </html>
