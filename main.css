@@ -24,13 +24,9 @@ a:visited {
       color: blue;
 }
 
-.content {
-    display:flex;
-}
-
 .text{
-    padding-right: 20%;
-    padding-left: 20%;
+    margin-left:10%;
+    margin-right:10%;
 }
 
 figure {

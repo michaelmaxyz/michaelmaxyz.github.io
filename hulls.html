@@ -30,14 +30,14 @@
         </figure>
         <p>Things get a little bit more complicated in three dimensions. For the most simple implementation, simply move through every triplet pair of points (a face) and decide if every other point is on one side of the face. If so, it belongs to the convex set. This is done by finding the orthogonal vector and using cross and dot products to see if the above condition is true. This naive algorithm runs in O(n^4) time. Although it can be optimized, it is very simple and is acceptable when N is a (relatively) low number. Possible optimizations include using Jarvis March in three dimensions which would be O(nF) where F is the number of faces, a divide and conquer (difficult) algorithm that would run in O(nlogn) time as well as an incremental algorithm that would take O(n^2). </p>
         <figure>
-        <img id = "small" height ="40%" width = "40%"  src="images/3d.gif">
+        <img id = "small" height ="40%" width = "40%"  src="images/3D.gif">
         <img id = "small" height ="40%" width = "40%"  src="images/3dwp.gif">
 
         <figcaption>On the left, convex hull in three dimensions. On the right, convex hull with the bodies shown. </figcaption>
         </figure>
         </div></div>
         <br>
-        <h2>Code avaliable on <a href = "http://github.com/michaelmaxyz/convexhulls">GITHUB</a></h2>
+        <h2>Code available on <a href = "http://github.com/michaelmaxyz/convexhulls">GITHUB</a></h2>
     <hr>
 
 <p>email: chiuyin2@illinois.edu</p>

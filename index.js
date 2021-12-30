@@ -71,7 +71,19 @@ const quotes = [
 	},{
 		"quote" : "TO LOVE is to find pleasure in the happiness of others.", 
 		"source" : "Gottfried Leibniz"
-	}
+	},{
+        "quote" : "If you think technology can solve your security problems, then you don't understand the problems and you don't understand the technology.", 
+		"source" : "Bruce Schneier"
+    },{
+        "quote" : "Two years from now, spam will be solved.", 
+		"source" : "Bill Gates"
+    },{
+        "quote" : "Under capitalism, man exploits man. Under communism, it's just the opposite.", 
+		"source" : "John Kenneth Galbraith"
+    },{
+        "quote" : "Give a man fire and he's warm for a day. Set a man on fire and he's warm for the rest of his life.", 
+		"source" : "Terry Pratchett"
+    }
     
 ]
 

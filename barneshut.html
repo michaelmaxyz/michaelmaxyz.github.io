@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <div class="about">
+<a class="mainlogo" href="index.html" style="color:black; text-decoration:none"><h1>Michael Ma AKA 馬超然</h1></a>   <a class="link"href="projects.html">projects</a>
+    <a class="link"href="writing.html">writing</a>
+    <a class="link"href="Resume2021.pdf">resume</a>
+    </div>         
+    <div class="content">
+    <div class="text">
+    <h2>Barnes Hut Algorithm to Simulate Galaxies</h2>
+        <p>The Barnes-Hut algorithm is a O(nlogn) algorithm that is a major improvement from the very slow O(n^2) brute force algorithm. The brute force algorithm becomes problematic when n (number of bodies) is set to more than ~1000. The gravitational force an object exerts on another object becomes very, very small when their distances are far apart, so the key idea of the Barnes-Hut Algorithm is to basically group objects that are far apart together using their center of masses, and treat them as if they are just a single object. There are basically two parts of this algorithm. The first is to initialize the quad tree that we are using based on the locations of the bodies. </p>
+        <img height="20%" height = "20%" src="images/tree.png"> <br>
+        The root of the quad tree represents the universe, and every quadrant can be recursively divided into fourths until every object has a corresponding quadrant to itself. The external nodes of the quadtree (leaves) store either nothing or a single body. The internal nodes store the aggregate center of mass and the total mass of all objects underneath them. 
+        <br>
+        <p>After creating the tree, now it is time to calculate the forces on every single object. We traverse through the nodes recursively starting from the root. We now need to check if the node is far enough from the current body, and we use the quotient s / d where s is the width of the current quadrant and d is the distance from the body and the node's center of mass. We can arbitrarily pick a value θ such that θ > 0 to check if s / d is less than θ. When θ is closer to 0, it becomes more accurate but slower because we are approximating less, and when θ is further away, it speeds up the simulation but we lose accuracy. When θ is 0 it simply just becomes the naive implementation that runs in O(n^2) time. If the node is far enough away from the current body, we can easily just treat it like a single object. If it is not, then we must recursively repeat by traversing through every subtree. </p>
+        <video width="40%" height="40%" controls>
+        <source src="images/sketch.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+        <p>Shown above is ~40k stars orbiting around a blackhole. It runs pretty well, while my computer freezes at around a thousand stars when using a brute force approach. The power of algorithms! Possible ideas include creating galaxy collisions, solar systems, stars of different masses and sizes, etc, but I'm pretty happy with the current project. Also, it should be noted that implementing a 3D n body simulation is very easy, simply turn the quadtree into an octree and recursively divide every quadrant into eighths instead of fourths. I implemented my own 3D simulation but I found it to be not as visually pleasing as a 2 dimensional approach.</p>
+        </div></div>
+        <br>
+        <h2>Code available on <a href = "http://github.com/michaelmaxyz/nbody">GITHUB</a></h2>
+    <hr>
+
+<p>email: chiuyin2@illinois.edu</p>
+<script src="index.js"></script>
+</body>
+</html>
