@@ -14,10 +14,11 @@
     </div>         
     <div class="content">
     <div class="text">
-    <h2>Dynamic Voronoi Diagram</h2>
-        <p>A voronoi diagram is simply a diagram where there exists a finite set of points and for each point there exists a Voronoi cell that consists of all locations closer to it than any other point. Each voronoi cell is colored a random color and the program allows you to remove points using the "A" key and add points using the "D" key. Programmed in java. Source code on <a href="https://github.com/michaelmaxyz/voronoi">Github.</a></p></div></div>
+    <h2>Delaunay triangulations using Bowyer-Watson</h2>
+        <p>A <a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">delaunay triangulation</a> is a triangulation such that every circumcircle of every triangle have empty interiors. A brute force approach is slow, running at O(n^4) time (checking EVERY possible circumcircle using EVERY triplet of points and then checking if EVERY other point is outside of said circumcircle), but there exists a O(n^2) approach and if optimized, a O(nlogn) algorithm using <a href ="https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm">Bowyer-Watson.</a> Bowyer-Watson is an incremental algorithm that begins with a "supertriangle" that contains every point. We then add points one by one and we delete every new triangle created that contains a new point. We then connect edges from the new point to every other point until every point has been added. We then remove the super triangle and its corresponding triangles.  </p>
+        <p>A voronoi diagram is simply a diagram where there exists a finite set of points and for each point there exists a Voronoi cell that consists of all locations closer to it than any other point. A voronoi diagram can be easily gotten from a delaunay triangulation. For each triangle, the circumcenter becomes the verticies of the voronoi diagram, and for every adjacent set of triangles, simply connect the circumcenters of the triangles and you get a voronoi diagram. Source code on <a href="https://github.com/michaelmaxyz/delaunay">Github.</a></p></div></div>
         <br>
-        <img src="images/vo.gif">
+        <img src="images/tri.mp4">
     <hr>
 
 <p>email: chiuyin2@illinois.edu</p>
