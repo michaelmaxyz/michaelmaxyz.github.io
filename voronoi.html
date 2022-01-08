@@ -16,13 +16,13 @@
     <div class="text">
     <h2>Delaunay triangulations using Bowyer-Watson</h2>
         <p>A <a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">delaunay triangulation</a> is a triangulation such that every circumcircle of every triangle have empty interiors. A brute force approach is slow, running at O(n^4) time (checking EVERY possible circumcircle using EVERY triplet of points and then checking if EVERY other point is outside of said circumcircle), but there exists a O(n^2) approach and if optimized, a O(nlogn) algorithm using <a href ="https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm">Bowyer-Watson.</a> Bowyer-Watson is an incremental algorithm that begins with a "supertriangle" that contains every point. We then add points one by one and we delete every new triangle created that contains a new point. We then connect edges from the new point to every other point until every point has been added. We then remove the super triangle and its corresponding triangles.  </p>
-        <p>A voronoi diagram is simply a diagram where there exists a finite set of points and for each point there exists a Voronoi cell that consists of all locations closer to it than any other point. A voronoi diagram can be easily gotten from a delaunay triangulation. For each triangle, the circumcenter becomes the verticies of the voronoi diagram, and for every adjacent set of triangles, simply connect the circumcenters of the triangles and you get a voronoi diagram. Source code on <a href="https://github.com/michaelmaxyz/delaunay">Github.</a></p></div></div>
+        <p>A voronoi diagram is simply a diagram where there exists a finite set of points and for each point there exists a Voronoi cell that consists of all locations closer to it than any other point. A voronoi diagram can be easily derived from a delaunay triangulation. For each triangle, the circumcenter becomes the vertices of the voronoi diagram, and for every adjacent set of triangles, simply connect the circumcenters of the triangles and you get a voronoi diagram. Source code on <a href="https://github.com/michaelmaxyz/delaunay">Github.</a></p></div></div>
         <br>
         <video width="40%" height="40%" controls>
         <source src="images/tri.mp4" type="video/mp4">
         Your browser does not support the video tag.
         </video>    
-        <p>Shown below is the delaunay triangulation, its corresponding voronoi diagram and both of them rendered at the same time.</p>
+        <p>Shown below is the delaunay triangulation, its corresponding voronoi diagram and both of them rendered at the same time. Each point is moving in a random elliptical pattern.</p>
         <hr>
 
 <p>email: chiuyin2@illinois.edu</p>
